@@ -1,15 +1,32 @@
+<!--Script allows you to use the composition API without defining a setup function, making the component code cleaner and more concise. -->
 <script setup>
-import { ref } from 'vue'
+//ref: Creates a reactive reference for a primitive type
+//reactive: Creates a reactive object for more complex types
+import { ref, reactive } from 'vue'
 
+//defining components props
 defineProps({
   msg: String,
 })
-
+//Any changes to 'count' are reactive with use of ref
+//Vue will automatically update the DOM whenever its value changes.
 const count = ref(0)
+
+//creating reactive object state with properties count and message
+const state = reactive({
+  count: 0,
+  message: 'empty'
+})
+//API to make an HTTP request to ASP.NET
+fetch('http://http://localhost:5105/test')
+//method reads the response body to completion and returns a promise that resolves with a text string.
+.then(res => res.text())
+.then(t => state.message = t)
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
+  <h1>{{ state.message }}</h1>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>

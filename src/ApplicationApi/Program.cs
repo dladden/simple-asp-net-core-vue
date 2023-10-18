@@ -1,10 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // This tells the app to use Startup for configuration
-builder.ConfigureServices((context, services) => {
-    Startup startup = new Startup();
-    startup.ConfigureServices(services);
-});
+
+Startup startup = new Startup();
+startup.ConfigureServices(builder.Services);
 
 
 // Add services to the container.

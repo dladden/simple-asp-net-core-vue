@@ -26,9 +26,9 @@ Running the Vue.js Frontend
 
 `npm install`
 
-n`pm run dev`
+`npm run dev`
 
-The frontend should now be running and typically will be accessible at http://localhost:3000 or another port if Vite is configured differently.
+The front-end should now be running and typically will be accessible at http://localhost:3000 or another port if Vite is configured differently.
 Why Vite?
 Vite offers faster and more efficient development for modern web projects. Some benefits include:
 
